@@ -29,10 +29,10 @@
         <div class="issues-container d-flex flex-wrap mt-4">
             <% issues.map((issue)=>{ %>
                 <div class="issue-card" style="width: 16rem;">
-                      <h5 class="issueTitle"><%=issue.title%></h5>
-                      <p class="issueDesc"><b><%=issue.description%></b></p>
+                      <h5 class="issueTitle text-danger"><%=issue.title%></h5>
+                      <p class="issueDesc"><%=issue.description%></p>
                       <div>
-                            <span class="text-primary"><b>Labels:</b> </span>
+                            <span class="text-dark"><b>Labels:</b> </span>
                           <%issue.labels.map((label)=>{ %>
                               <span class="btn btn-info py-0 mb-2"><%=label%></span>
                           <%})%>
