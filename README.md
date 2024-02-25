@@ -5,7 +5,7 @@ This project is a Node.js application designed to serve as a basic web server wi
 - Clone the repository to your local machine.
 - Make sure you have Node.js and MongoDB installed.
 - Install project dependencies by running npm install.
-- Create a .env file in the root directory and configure environment variables like MONGO_URI.
+- Create a .env file in the root directory and configure the environment variable - MONGODB_URL.
 - Start the server by running npm start.
 
 ### Project Structure:
