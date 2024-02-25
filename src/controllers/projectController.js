@@ -27,7 +27,7 @@ export default class ProjectController {
     addProject = async(req, res)=>{
         try{
             await add(req.body)  
-            res.redirect('/project');
+            res.redirect('/');
         }catch(err){
             res.render('404', {msg:"something went wrong, try again later"})
         }
@@ -37,7 +37,7 @@ export default class ProjectController {
         try{
             const {id} = req.params
             await deleteProject(id)
-            res.redirect('/project');
+            res.redirect('/');
         }catch(err){
             res.render('404', {msg:"something went wrong, try again later"})
         }

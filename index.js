@@ -15,7 +15,7 @@ app.use(expressEjsLayouts)
 app.set("view engine", "ejs")
 app.set("views", path.resolve("src", "views"))
 
-app.use('/project', ProjectRoute)
+app.use('/', ProjectRoute)
 
 app.use('*', (req, res)=>{
     res.render('404', {msg:"Incorrect URL, try below link"})

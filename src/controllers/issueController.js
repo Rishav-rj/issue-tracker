@@ -9,7 +9,7 @@ export default class IssueController {
             const {title, description, labels, author} = req.body
             const issue = {title, description, labels, author, "projectId":id}
             await addProjectIssue(issue)
-            res.redirect(`/project/${id}`)
+            res.redirect(`/${id}`)
         }catch(err){
             res.render(`404`, {msg:"something went wrong, try again later"})
         }
@@ -31,7 +31,7 @@ export default class IssueController {
         try{
             const {id} = req.params
             const issue = await deleteIssue(id)
-            res.redirect(`/project/${issue.projectId}`)
+            res.redirect(`/${issue.projectId}`)
         }catch(err){
             res.render('404', {msg:"something went wrong, try again later"})
         }
