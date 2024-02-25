@@ -1,0 +1,53 @@
+<div class="container d-flex justify-content-end">
+    <button type="button" class="btn btn-success fs-5 my-3" data-bs-toggle="modal" data-bs-target="#addProject">
+        <i class="fa-solid fa-circle-plus me-2"></i>
+        Create Project
+    </button>
+</div>
+
+<!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="addProject" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add New Project</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body submit-form">
+          <form action="/project/add" method="post">
+            <label for="name"><b>Name: </b></label>
+            <input type="text" name="name" id="name" required><br/>
+            <label for="description"><b>Description: </b></label>
+            <input type="text" name="description" id="description" required><br/>
+            <label for="author"><b>Author: </b></label>
+            <input type="text" name="author" id="author" required><br/>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+    <% let i = 0%>
+    <%projects.map((project)=>{ i++%>
+        <div class="d-flex justify-content-between projects">
+            <div class="d-flex align-items-center">
+                <h3 class="ms-2 mb-0"><%=i%>.</h3>
+                <h3 class="ms-2 mb-0"><%=project.name%></h3>
+                <p><%=project.author%></p>
+            </div>
+            <div class="d-flex align-items-center">
+                <a href="/project/<%= project._id %>">
+                  <button class="btn btn-info text-white"><b>View Details</b></button></a>
+                <a href="/project/<%= project._id %>/deleteproject">
+                  <i class="fa-solid fa-trash-can text-danger mx-3 fs-5"></i>
+                </a>
+            </div>
+        </div>
+    <% }) %>
+</div>
